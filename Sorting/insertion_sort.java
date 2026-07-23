@@ -1,22 +1,21 @@
 
-
 import java.util.Scanner;
 
-public class BubbleSort {
+public class insertion_sort {
 
-    public static void bubbleSort(int[] arr) {
+    public static void insertion_sort(int[] arr) {
 
-        for (int turn = 1; turn < arr.length; turn++) {
+        for (int i = 1; i < arr.length; i++) {
 
-            for (int i = 0; i < arr.length - turn; i++) {
+            int item = arr[i];
+            int j = i - 1;
 
-                if (arr[i] > arr[i + 1]) {
-
-                    int temp = arr[i];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1] = temp;
-                }
+            while (j >= 0 && arr[j] > item) {
+                arr[j + 1] = arr[j];
+                j--;
             }
+
+            arr[j + 1] = item;
         }
     }
 
@@ -35,7 +34,7 @@ public class BubbleSort {
             arr[i] = sc.nextInt();
         }
 
-        bubbleSort(arr);
+        insertion_sort(arr);
 
         System.out.println("Sorted Array:");
 
