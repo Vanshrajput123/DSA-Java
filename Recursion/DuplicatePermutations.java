@@ -1,4 +1,4 @@
-package RecursionOne;
+
 import java.util.Scanner;
 
 public class DuplicatePermutations {
